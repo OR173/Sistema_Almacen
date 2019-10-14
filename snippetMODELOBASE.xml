@@ -1,0 +1,491 @@
+C:\Users\Orestes Fleitas\AppData\Roaming\Sublime Text 3\Packages\User
+C:\Users\Viajes Sucre Globe\AppData\Roaming\Sublime Text 3\Packages\User
+<snippet>
+	<content><![CDATA[
+
+<?php  	require_once '../modelo/${1:nombre_clase}.php'; session_start();
+	
+	\$$1 = new $1();
+
+	switch (\$_GET['opcion']) { 
+
+		case '1': // REGISTRAR
+			
+			\$$1->set${2:a1}(\$_POST['id']);
+			\$$1->set${3:b1}(\$_POST['nombre']);
+			\$$1->set${4:c1}(\$_POST['color']);
+			\$$1->set${5:d1}(\$_POST['dimension']);
+			\$$1->set${6:e1}(\$_POST['espesor']);
+			\$$1->set${7:f1}(\$_POST['peso']);
+			\$$1->set${8:g1}(\$_POST['marca']);
+			\$$1->set${9:h1}(\$_POST['marca']);
+
+			if(\$$1->registrar()== true){echo"<script> toastrNav('Solicitud Registrada', 1); </script>";} 
+			else{echo"<script> toastrNav('Error al Registrar', 3); </script>";}
+			
+			break;
+
+		case '2':
+				# code...
+			break;
+
+		case '3':
+				# code...
+			break;
+
+		case '4':
+				# code...
+			break;
+
+		default:break;
+	}
+?>
+
+<?php 	require_once 'conexionBD.php';
+
+class $1{
+
+	private \$$2;	private \$$3;	private \$$4;	private \$$5;
+	private \$$6;	private \$$7;	private \$$8;	private \$$9;
+	
+
+	private \$con; function __construct() {\$this->con= new conexionbd;}
+	public function set$2 (\$$2) { \$this->$2=\$$2;}
+	public function get$2 () { return \$this->$2;}
+	public function set$3 (\$$3) { \$this->$3=\$$3;}
+	public function get$3 () { return \$this->$3;}
+	public function set$4 (\$$4) { \$this->$4=\$$4;}
+	public function get$4 () { return \$this->$4;}
+	public function set$5 (\$$5) { \$this->$5=\$$5;}
+	public function get$5 () { return \$this->$5;}
+	public function set$6 (\$$6) { \$this->$6=\$$6;}
+	public function get$6 () { return \$this->$6;}
+	public function set$7 (\$$7) { \$this->$7=\$$7;}
+	public function get$7 () { return \$this->$7;}
+	public function set$8 (\$$8) { \$this->$8=\$$8;}
+	public function get$8 () { return \$this->$8;}
+	public function set$9 (\$$9) { \$this->$9=\$$9;}
+	public function get$9 () { return \$this->$9;}
+
+	public function registrar()
+		{
+			\$sql= "INSERT INTO $1 (
+
+			 $2 	,$3 	,$4 	,$5
+			,$6 	,$7, 	 $8		,$9  
+
+			)VALUES(
+
+			 '".\$this->$2."','".\$this->$3."','".\$this->$4."','".\$this->$5."'
+			,'".\$this->$6."','".\$this->$7."','".\$this->$8."','".\$this->$9."'
+			
+
+			);"; \$aux = \$this->con->consultaRetorno(\$sql);
+		       	  if(!\$aux){ return false; }
+		       	  else{ return true;}
+		}
+
+}
+
+?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>modelobase</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+___________________________________////////////
+<snippet>
+	<content><![CDATA[
+<?php
+	
+?>
+
+	// -----------
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>php</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+\$('#$1').
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s.</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+<?php session_start(); if (\$_SESSION['tipousuario'] == 15) {  include("../cabecera.php"); ?>
+
+	<div class="row">  
+        <ol class="breadcrumb" style="" >
+            <li> <a href="index.html">Inicio</a> </li>
+            <li id="gXX" class=""><a><strong>Nivel 1</strong></a></li>
+            <li id="gXX" class="hidden"><a><strong>Nivel 2</strong></a></li>
+            <li id="gXX" class="hidden"><a><strong>Nivel 3</strong></a></li> 
+        </ol>
+    </div>
+<!-- ........................................................................-->
+
+
+
+
+
+<!-- ........................................................................-->
+<?php include("../piedepagina.php");  
+}else{ header("location: ../error.php");}?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>htmlbase</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+<div class="row">
+    <div class="col-md-12">
+
+    </div>
+	<div class="col-md-12">
+
+    </div>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>row</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+\$x=\$proveedores->consulta_rapida2(\$_POST['rif']);
+
+	while (\$p=pg_fetch_assoc(\$x)) {
+		echo '
+            <h1>'.\$p['nombre'].'</h1><br>';
+	}
+				
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>controladorconsultar</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+public function consultar_proveedor(\$aux)
+		{
+       		\$query = "SELECT * FROM proveedor WHERE rif = '".\$aux."';";
+
+			\$aux =\$this->con->consultaRetorno(\$query);
+			return \$aux;
+		}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>modeloconsulta</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+public function consulta_unica()
+	{
+       	\$query = "SELECT id FROM actividades ORDER BY id DESC LIMIT '1';";
+
+       	\$aux =\$this->con->consultaRetorno(\$query);
+
+       	while (\$p=pg_fetch_assoc(\$aux)) {
+			\$this->id = \$p['id'];
+			\$this->descripcion = \$p['descripcion'];						
+		}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>modeloconsulta2</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+<button id="" onclick="" type="button" class="btn btn-w-m btn-success">Success</button>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>button</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+\$q=\$partida->consultar();
+\$r = pg_num_rows(\$q);
+if (\$r==0) {
+
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>roww</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+<i class="fa fa-exclamation fa-5x"></i>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>icono</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+\$.ajax({
+    type: 'POST',
+    url: '../../../controlador/gestionarSubEntregable.php?opcion=8',
+    data: {},
+    success:function(rt){
+        \$('#modificar_edt1').html(rt);
+    }  
+}) .done(function() {
+    
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ajax</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+echo"
+	<script> toastrNav('Material ya Registrado', 2); </script>
+";
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>toas</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+swal({
+    title: "titulo",
+    text: "texto", 
+    showCancelButton: true,
+    confirmButtonColor: "#DD6B55",
+    confirmButtonText: "Si, aceptar",
+    closeOnConfirm: false
+}, function () {
+    \$('.sweet-overlay').remove();
+    \$('.sweet-alert').remove();
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>swal</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+<div id="proyecto_1" class="row">
+    <div class="col-md-12">
+    	<div class="ibox" style="margin: 30px 15px 0px 15px">
+    		<div class="ibox-content white">
+    			<div style="background-color: transparent; padding-bottom: 10px; margin-bottom: 15px; border-bottom: 1px solid #f3f3f4">
+	    			<p class="Bitter" style="text-align: center; font-size: 35px; margin-top: 10px;">
+	    				PROYECTOS
+	    			</p>
+    			</div>
+    			<div id="proyectoNAV">
+				</div>
+    		</div>
+    	</div>
+    </div>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ibox</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+<!-- **************************************************
+***  ${1:COMENTARIO}
+******************************************************* -->
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>comentario</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+<div style="height: 250px; background-color: white; width:100%; padding-top: 10%">
+	<div class="sk-spinner sk-spinner-circle">
+		<div class="sk-circle1 sk-circle"></div>
+		<div class="sk-circle2 sk-circle"></div>
+		<div class="sk-circle3 sk-circle"></div>
+		<div class="sk-circle4 sk-circle"></div>
+		<div class="sk-circle5 sk-circle"></div>
+		<div class="sk-circle6 sk-circle"></div>
+		<div class="sk-circle7 sk-circle"></div>
+		<div class="sk-circle8 sk-circle"></div>
+		<div class="sk-circle9 sk-circle"></div>
+		<div class="sk-circle10 sk-circle"></div>
+		<div class="sk-circle11 sk-circle"></div>
+		<div class="sk-circle12 sk-circle"></div>
+	</div>
+	<div>
+		<h3 class="Bitter" style="text-align: center; margin-top: 20px;">Espere por favor</h3>
+	</div>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>spinner</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+<div id="Modificar_Requisicion" class="modal fade" aria-hidden="false">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width: 400px; height: 400px; left: 80px">
+        <div class="modal-header" style="padding: 40px 15px;text-align: center;">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <h4 style="font-size:26px; font-family:Bitter" >Agregar Clasificacion</h4>
+        </div>
+        <div class="modal-body" style="padding: 20px 30px 30px 30px; background-color: #f8fafb; height: 183px;">
+          <textarea id="textoPaquete" name="textoPaquete" style="max-height: 161px; max-width: 337px; min-height: 161px; min-width: 337px;"></textarea>
+        </div>
+        <div class="modal-footer" style="margin-top: 0px;">
+          <button type="button" class="btn btn-white" data-dismiss="modal">Cerrar</button>
+          <button id="aceptar_clasificacion" type="button" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>modal</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+ini_set('date.timezone', 'America/Caracas');
+\$fecha = date('d / m / y', time());
+\$hora = date('g:i a', strtotime(date('h:i:s', time())));
+echo \$hora.'<br>';
+print \$fecha.'<br>';
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fecha</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
+
+___________________________________////////////
+
+<snippet>
+	<content><![CDATA[
+<input type="text" class="form-control input-sm m-b-xs" id="filter"
+	placeholder="buscar">
+<table class="footable table table-stripped" data-page-size="8" data-filter=#filter>
+	<thead>
+		<tr>
+			<th class="col-md-0"></th>
+			<th class="col-md-0"></th>
+			<th class="col-md-0"></th>
+			<th class="col-md-0"></th>
+			<th class="col-md-0"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="padding-bottom: 25px;"></td>
+			<td>Orestes</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td style="padding-bottom: 25px;"></td>
+			<td>Fleitas</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="5">
+				<ul class="pagination pull-right"></ul>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>tabla</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
